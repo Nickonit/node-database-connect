@@ -1,8 +1,8 @@
-//External Module
+//library imports
 let express = require('express');
 let bodyParser = require('body-parser');
 
-//Files
+//local imports with Destructuring
 let {mongoose} = require('./db/mongoose');
 let {Todo} = require('./models/todo');
 let {User} = require('./models/User');
@@ -32,7 +32,7 @@ app.listen(3000,() => {
 });
 
 
-
+module.exports = {app};
 
 // let newTodo = new Todo({
 //     text: 'Cook Dinner'
