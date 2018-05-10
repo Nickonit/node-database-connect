@@ -24,7 +24,13 @@ app.post('/todos',(req, res) =>{
     });
 });
 
-
+app.get('/todos',(req,res) =>{
+   Todo.find().then((todos) =>{
+       res.send({todos});
+   },(e) =>{
+       res.stack(400).send(e);
+   });
+});
 
 
 app.listen(3000,() => {
